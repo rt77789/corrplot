@@ -18,7 +18,7 @@ corrplot(corr,
 	type = c("full", "lower", "upper"), add = FALSE,
 	col = NULL, bg = "white", title = "",  is.corr = TRUE,		
 	diag = TRUE, outline = FALSE, mar = c(0,0,0,0),
-	addgrid.col = NULL, addCoef.col = NULL, addCoefasPercent = FALSE, 
+	addgrid.col = NULL, addCoef.col = NULL, addCoef.cex = 1, addCoefasPercent = FALSE, 
 
 	order = c("original", "AOE", "FPC", "hclust", "alphabet"),
 	hclust.method = c("complete", "ward", "single", "average","mcquitty", "median", "centroid"),
@@ -107,6 +107,10 @@ or \code{shade}, the default values is \code{"white"}, otherwise \code{"grey"}.
 
   \item{addCoef.col}{
 Color of coefficients added on the graph. If \code{NULL} (default), add no coefficients. 
+}
+
+  \item{addCoef.cex}{
+Numeric, for the size of text label (coefficients), the default value is 1.
 }
 
   \item{addCoefasPercent}{
