@@ -7,7 +7,7 @@ corrplot <- function(corr,
 		col = NULL, bg = "white", title = "", is.corr = TRUE,
 		diag = TRUE, outline = FALSE, mar = c(0,0,0,0),
 		addgrid.col = NULL, addCoef.col = NULL, addCoef.cex = 1, addCoefasPercent = FALSE, 
-
+		
 		order = c("original", "AOE", "FPC", "hclust", "alphabet"),
 		hclust.method = c("complete", "ward", "single", "average",
 			"mcquitty", "median", "centroid"),
@@ -230,7 +230,7 @@ corrplot <- function(corr,
 	if(method=="number"&plotCI=="n"){
 		text(Pos[,1], Pos[,2], font = 2, col = col.fill,
 		labels = round((DAT-int)*ifelse(addCoefasPercent, 100, 1)/zoom, 
-				ifelse(addCoefasPercent, 0, 2)), cex = addCoef.cex)
+				ifelse(addCoefasPercent, 0, 2)))
 	}
 
 	## pie
@@ -458,7 +458,7 @@ corrplot <- function(corr,
 	if(!is.null(addCoef.col)&(!method == "number")){
 		text(Pos[,1], Pos[,2],  col = addCoef.col,
 		labels = round((DAT-int)*ifelse(addCoefasPercent, 100, 1)/zoom, 
-				ifelse(addCoefasPercent, 0, 2)))
+				ifelse(addCoefasPercent, 0, 2)), cex = addCoef.cex)
 	}
 	
 	## add grid, in case of the grid is ate when "diag=FALSE"
